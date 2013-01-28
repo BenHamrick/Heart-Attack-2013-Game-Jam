@@ -1,0 +1,72 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="HeartbeatGlobalGameJam2013" GeneratedClassName="HighScores">
+  <Profiles />
+  <Settings>
+    <Setting Name="User1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CPU</Value>
+    </Setting>
+    <Setting Name="User2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CPU</Value>
+    </Setting>
+    <Setting Name="User3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CPU</Value>
+    </Setting>
+    <Setting Name="User4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CPU</Value>
+    </Setting>
+    <Setting Name="User5" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CPU</Value>
+    </Setting>
+    <Setting Name="User6" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CPU</Value>
+    </Setting>
+    <Setting Name="User7" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CPU</Value>
+    </Setting>
+    <Setting Name="User8" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CPU</Value>
+    </Setting>
+    <Setting Name="User9" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CPU</Value>
+    </Setting>
+    <Setting Name="User10" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CPU</Value>
+    </Setting>
+    <Setting Name="UserScore1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">25000</Value>
+    </Setting>
+    <Setting Name="UserScore2" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">20000</Value>
+    </Setting>
+    <Setting Name="UserScore3" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">8000</Value>
+    </Setting>
+    <Setting Name="UserScore4" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">4000</Value>
+    </Setting>
+    <Setting Name="UserScore5" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2000</Value>
+    </Setting>
+    <Setting Name="UserScore6" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="UserScore7" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="UserScore8" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="UserScore9" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="UserScore10" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="FullScreen" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SoundsEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
