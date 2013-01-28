@@ -174,7 +174,7 @@ namespace HeartbeatGlobalGameJam2013.Objects
             TotalElapsed += gameTime.ElapsedGameTime.TotalSeconds;
             if (!dead)
             {
-                if (TotalElapsed > .1)
+                if (TotalElapsed > .03)
                 {
                     frame++;
                     // Keep the Frame between 0 and the total frames, minus one.
@@ -185,7 +185,7 @@ namespace HeartbeatGlobalGameJam2013.Objects
             }
             else
             {
-                if (TotalElapsed > .1)
+                if (TotalElapsed > .03)
                 {
                     frame++;
                     ExplosionFrame.X = frame * 128;

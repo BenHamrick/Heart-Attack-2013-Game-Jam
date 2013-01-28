@@ -29,6 +29,8 @@ namespace HeartbeatGlobalGameJam2013.Objects
         private static Vector2 inletPosition = new Vector2(150, 200);
         public static readonly int inletLine = 450;
         public static int Pulse { get; set; }
+        public static int currentHealth { get; set; }
+
 
         public Heart(int X, int Y)
             : base()
@@ -38,6 +40,7 @@ namespace HeartbeatGlobalGameJam2013.Objects
             heartTimer = new Stopwatch();
             saturationTimer = new Stopwatch();
             this.Health = 100;
+            Heart.currentHealth = this.Health;
         }
 
         public override void LoadContent(ContentManager content)
@@ -112,7 +115,7 @@ namespace HeartbeatGlobalGameJam2013.Objects
                     }
                     else if (item.GetType() == typeof(RedBloodCell))
                     {
-                        this.Health += 2;
+                        //this.Health += 2;
                         if (GamePlay.saturation <= publicStatics.SaturationThreshold)
                         {
                             GamePlay.rbcDestroyed--;
@@ -121,7 +124,7 @@ namespace HeartbeatGlobalGameJam2013.Objects
                     }
                     else if (item.GetType() == typeof(WhiteBloodCell))
                     {
-                        this.Health += 3;
+                        this.Health += 5;
                         item.isAlive = false;
                     }
                     if (Health > 100)
@@ -177,20 +180,21 @@ namespace HeartbeatGlobalGameJam2013.Objects
             if (Health <= 0)
                 ScreenLoader.ScreenLoader.LoadNextScreen("HighScore");
             Beat();
+            Heart.currentHealth = this.Health;
             base.Update(gameTime);
         }
 
         private void Music()
         {
-                
-                if (_pulseTime >= 180)
-                {
-                        GamePlay.currentSong = "01_Touhou";
-                }
-                else 
-                {
-                        GamePlay.currentSong = "03_Touhou";
-                }
+
+            if (_pulseTime >= 180)
+            {
+                GamePlay.currentSong = "01_Touhou";
+            }
+            else
+            {
+                GamePlay.currentSong = "03_Touhou";
+            }
         }
 
         public void Beat()

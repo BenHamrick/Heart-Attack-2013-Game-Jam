@@ -74,7 +74,6 @@ namespace HeartbeatGlobalGameJam2013.Screens
 
         public override void Initialize()
         {
-            
         }
 
         public override void LoadContent(Microsoft.Xna.Framework.Content.ContentManager content, Microsoft.Xna.Framework.GraphicsDeviceManager graphics)
@@ -84,6 +83,7 @@ namespace HeartbeatGlobalGameJam2013.Screens
 
             loadAllContent(content, graphics);
             textboxes.Add(new Textbox("", new Rectangle(20, 50, 150, 40), Font.cooper32, Color.White, 3));
+            textboxes[0].hasFocus = true;
             cursor.LoadContent(content);
         }
 
@@ -100,9 +100,14 @@ namespace HeartbeatGlobalGameJam2013.Screens
             {
                 buttons[i].UpdateEvents();
             }
-            if (buttons[0].Clicked())//Resume
+            if ((buttons[0].Clicked() && textboxes[0].text.Length > 0 && nameToChange != 11) || ((nameToChange == 11) && buttons[0].Clicked()))//Resume
             {
+                updateNames();
                 ScreenLoader.ScreenLoader.LoadNextScreen("TitleScreen");
+            }
+            else if ((buttons[0].Clicked() && textboxes[0].text.Length > 0 && nameToChange != 11) == false)
+            {
+                textboxes[0].hasFocus = true;
             }
             for (int i = 0; i < textboxes.Count; i++)
             {
@@ -112,9 +117,9 @@ namespace HeartbeatGlobalGameJam2013.Screens
             {
                 hScoreNames[nameToChange] = textboxes[0].text;
             }
-            updateNames();
+            
 
-            loadAllContent(Content, Graphics);
+            
 
             //Update Mouse Cursor
             cursor.Update(gameTime);
@@ -144,19 +149,30 @@ namespace HeartbeatGlobalGameJam2013.Screens
                 textboxes[i].Draw(spriteBatch);
             }
 
+            updateDisplay();
+
             //Draw Mouse Cursor
             cursor.drawTexture(spriteBatch, graphicsDevice);
             spriteBatch.End();
         }
 
+        void updateDisplay()
+        {
+            for (int i = 1; i < 11; i++)
+            {
+                labels[i].text = "" + i + ":" + hScoreNames[i - 1] + ":" + (int)(hScores[i - 1] * .1);
+            }
+        }
+
         void loadAllContent(Microsoft.Xna.Framework.Content.ContentManager content, Microsoft.Xna.Framework.GraphicsDeviceManager graphics)
         {
             buttons.Clear();
-            labels.Clear();
+            //labels.Clear();
             //Start Button
             buttons.Add(new Button("Continue", new Vector2(publicStatics.screenSize.Right - 30 - (Font.cooper32.MeasureString("Resume").X / 2), publicStatics.screenSize.Bottom - 10 - (Font.cooper32.MeasureString("Resume").Y / 2)), Font.cooper32, Color.White));
 
             labels.Add(new Label("Your Score: " + (int)(publicStatics.curScore * .1), new Vector2(20 + Font.cooper32.MeasureString("Your Score: " + (int)(publicStatics.curScore * .1)).X / 2, 20 + Font.cooper32.MeasureString("Your Score: " + (int)(publicStatics.curScore * .1)).Y / 2), Font.cooper32, Color.White));
+
 
             //Score 1
             labels.Add(new Label("1: " + HighScores.Default.User1 + " : " + (int)(HighScores.Default.UserScore1 * .1), new Vector2(publicStatics.screenSize.Center.X, 65 * 1), Font.cooper32, Color.White));

@@ -71,6 +71,8 @@ namespace HeartbeatGlobalGameJam2013
             if (publicStatics.fullScreen && graphics.IsFullScreen == false)
             {
                 graphics.IsFullScreen = true;
+                graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+                graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
                 graphics.ApplyChanges();
                 float screenscale = GraphicsDevice.Viewport.Width / 1280f;
                 publicStatics.spriteScale = Matrix.CreateScale(screenscale, screenscale, 1);
@@ -78,6 +80,8 @@ namespace HeartbeatGlobalGameJam2013
             else if (publicStatics.fullScreen == false && graphics.IsFullScreen == true)
             {
                 graphics.IsFullScreen = false;
+                graphics.PreferredBackBufferHeight = 720;
+                graphics.PreferredBackBufferWidth = 1280;
                 graphics.ApplyChanges();
                 float screenscale = GraphicsDevice.Viewport.Width / 1280f;
                 publicStatics.spriteScale = Matrix.CreateScale(screenscale, screenscale, 1);

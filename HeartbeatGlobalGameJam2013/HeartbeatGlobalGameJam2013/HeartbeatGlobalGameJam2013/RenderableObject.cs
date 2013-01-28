@@ -78,7 +78,7 @@ namespace HeartbeatGlobalGameJam2013
             direction = new Vector2(0, 0);
         }
 
-        public void drawTexture(SpriteBatch spriteBatch, GraphicsDevice graphicsDevice)
+        public virtual void drawTexture(SpriteBatch spriteBatch, GraphicsDevice graphicsDevice)
         {
             if (this.isAlive)
             {

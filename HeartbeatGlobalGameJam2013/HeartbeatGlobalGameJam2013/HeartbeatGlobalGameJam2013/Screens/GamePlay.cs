@@ -253,19 +253,21 @@ namespace HeartbeatGlobalGameJam2013.Screens
             {
                 item.drawTexture(spriteBatch, graphicsDevice);
             }
-            spaceShip.Draw(spriteBatch);
-            spaceShip.drawTexture(spriteBatch, graphicsDevice);
-            spriteBatch.Draw(Image.redBloodCell, new Rectangle(100, 110, 48, 24), Color.White);
+            spriteBatch.Draw(Image.redBloodCell, new Rectangle(100, 125, 48, 24), Color.White);
             if (saturation < publicStatics.SaturationThreshold)
             {
-                spriteBatch.DrawString(Font.rbcStats, String.Format ("{0:0.00}", saturation) + "%", new Vector2(145, 100), Color.Red);
+                spriteBatch.DrawString(Font.rbcStats, String.Format ("{0:0.00}", saturation) + "%", new Vector2(155, 120), Color.Red);
             }
             else
             {
-                spriteBatch.DrawString(Font.rbcStats, String.Format("{0:0.00}", saturation) + "%", new Vector2(145, 100), Color.Green);
+                spriteBatch.DrawString(Font.rbcStats, String.Format("{0:0.00}", saturation) + "%", new Vector2(155, 120), Color.Green);
             }
             lblScore.Draw(spriteBatch);
             spriteBatch.Draw(Image.heartMeter, position, spriteFrame, Color.White, 0, new Vector2(spriteFrame.Width / 2, spriteFrame.Height / 2), SpriteEffects.None, 0);
+            spriteBatch.Draw(Image.heart, new Rectangle(100, 70, 60, 60), Color.White);
+            spriteBatch.DrawString(Font.heartHealth, Heart.currentHealth.ToString(), new Vector2(150, 70), Color.Green);
+            spaceShip.Draw(spriteBatch);
+            spaceShip.drawTexture(spriteBatch, graphicsDevice);
             spriteBatch.End();
         }
 
@@ -316,8 +318,7 @@ namespace HeartbeatGlobalGameJam2013.Screens
                 var myObject = Activator.CreateInstance(type, publicStatics.screenSize.Width, yLocation, rand.Next(1, 10));
                 RenderableObject rObj = (RenderableObject)myObject;
                 GameObjects.Add(rObj);
-            }
-            
+            }          
 
         }
     }

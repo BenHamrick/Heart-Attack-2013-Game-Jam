@@ -19,7 +19,7 @@ namespace HeartbeatGlobalGameJam2013
         Rectangle detection = new Rectangle();
         public ObjTexture image = Image.textButton;
         public int maxLength;
-        bool hasFocus = false;
+        public bool hasFocus = false;
         Animation cursor = new Animation(Image.textCursor);
 
         public Textbox(string str, Rectangle SizeandLocation, SpriteFont Font, Color Color, int MaxLength)
